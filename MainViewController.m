@@ -20,6 +20,8 @@
     
     [self disableSlidePanGestureForLeftMenu];
     [self disableSlidePanGestureForRightMenu];
+    
+    self.rightMenu.view.hidden = YES;
 }
 
 /*----------------------------------------------------*/
@@ -97,7 +99,7 @@
 
 - (CGFloat)leftMenuWidth
 {
-    return 250;
+    return 180;
 }
 
 - (CGFloat)rightMenuWidth

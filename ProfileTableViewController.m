@@ -60,24 +60,25 @@
     _basalCell.backgroundColor = colorButton;
     _melanoma.backgroundColor = colorButton;
     
-    [[UITableViewCell appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor blackColor]];
+    self.tableView.backgroundColor = [UIColor blackColor];
     
     // This controls the tableviewheaderview color
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [self imageWithColor:[UIColor whiteColor]];
+    //UIImageView *imageView = [[UIImageView alloc] init];
+    //imageView.image = [self imageWithColor:[UIColor whiteColor]];
     
-    [[UITableView appearance] setBackgroundView:imageView];
+    //[[UITableView appearance] setBackgroundView:imageView];
     
-    //[[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0]];
-    [[UILabel appearance] setTextColor:[UIColor blackColor]];
-    [[UILabel appearance] setBackgroundColor:[UIColor clearColor]];
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"HelveticaNeue" size:18.0]];
+    //[[UILabel appearance] setTextColor:[UIColor blackColor]];
+    //[[UILabel appearance] setBackgroundColor:[UIColor clearColor]];
     
     //[_sunScreenSlider setMinimumTrackTintColor:[UIColor blackColor]];
     //[_sunScreenSlider setMaximumTrackTintColor:[UIColor flatGrayColor]];
     
     //[[UISlider appearance] setThumbTintColor:[UIColor flatDarkBlueColor]];
     
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -175,6 +176,7 @@
     float height = [self tableView:self.tableView heightForHeaderInSection:section];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    headerView.backgroundColor = [UIColor blackColor];
     
     CGRect labelFrame;
     if (section == 2) labelFrame = CGRectMake(10, 0, self.tableView.frame.size.width, 40);
@@ -184,7 +186,7 @@
     textLabel.textAlignment = NSTextAlignmentLeft;
     
     textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18.0];
-    textLabel.textColor = [UIColor blackColor];
+    textLabel.textColor = [UIColor whiteColor];
 
     if (section == 0) textLabel.text = @"Skin Type";
     else if (section == 1)textLabel.text = @"Sunscreen SPF";

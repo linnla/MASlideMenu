@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+AMSlideMenu.h"
+#import "MGTileMenuController.h"
 
-@interface EducationViewController : UIViewController
+@interface EducationViewController : UIViewController <MGTileMenuDelegate, UIGestureRecognizerDelegate>
+
+@property (strong, nonatomic) MGTileMenuController *tileController;
 
 @end
