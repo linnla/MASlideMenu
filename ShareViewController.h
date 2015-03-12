@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+AMSlideMenu.h"
+#import "MGTileMenuController.h"
+#import <Social/Social.h>
 
-@interface ShareViewController : UIViewController
+@interface ShareViewController : UIViewController <MGTileMenuDelegate, UIGestureRecognizerDelegate>
+
+@property (strong, nonatomic) MGTileMenuController *tileController;
 
 @end

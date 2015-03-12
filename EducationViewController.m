@@ -103,7 +103,7 @@
 
 - (void)tileMenu:(MGTileMenuController *)tileMenu didActivateTile:(NSInteger)tileNumber
 {
-	NSLog(@"Tile %d activated (%@)", tileNumber, [self labelForTile:tileNumber inMenu:_tileController]);
+	NSLog(@"Tile %ld activated (%@)", (long)tileNumber, [self labelForTile:tileNumber inMenu:_tileController]);
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     

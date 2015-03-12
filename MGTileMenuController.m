@@ -978,21 +978,23 @@ CGGradientRef MGCreateGradientWithColors(UIColor *topColorRGB, UIColor *bottomCo
 								completion:NULL];
 				
 			} else {
+                
+                tileTitle = [_delegate labelForTile:currentTileIndex inMenu:self];
+                
+                if (tileTitle.length > 0) {
+                    
+                    tileButton.imageEdgeInsets = UIEdgeInsetsMake(-tileButton.frame.size.height + 35, 5, 0, 0);
+                    [tileButton setTitle:tileTitle forState:UIControlStateNormal];
+                    tileButton.titleLabel.font =  [UIFont systemFontOfSize:14];
+                    tileButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+                    tileButton.titleLabel.numberOfLines = 3;
+                    tileButton.titleEdgeInsets = UIEdgeInsetsMake(tileButton.frame.size.height - 35, -10, 20, 10);
+                }
+                
 				tileImage = [_delegate imageForTile:currentTileIndex inMenu:self];
                 [tileButton setImage:tileImage forState:UIControlStateNormal];
 				[tileButton setImage:tileImage forState:UIControlStateHighlighted];
-                
-                tileButton.imageEdgeInsets = UIEdgeInsetsMake(-tileButton.frame.size.height + 35, 5, 0, 0);
-                
-                tileTitle = [_delegate labelForTile:currentTileIndex inMenu:self];
-                [tileButton setTitle:tileTitle forState:UIControlStateNormal];
-                tileButton.titleLabel.font =  [UIFont systemFontOfSize:14];
-                tileButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-                tileButton.titleLabel.numberOfLines = 3;
-                
-                tileButton.titleEdgeInsets = UIEdgeInsetsMake(tileButton.frame.size.height - 35, -10, 20, 10);
-                
-				[tileButton setBackgroundImage:[self tileBackgroundImageForTile:currentTileIndex highlighted:NO] 
+                [tileButton setBackgroundImage:[self tileBackgroundImageForTile:currentTileIndex highlighted:NO]
 									  forState:UIControlStateNormal];
 				[tileButton setBackgroundImage:[self tileBackgroundImageForTile:currentTileIndex highlighted:YES] 
 									  forState:UIControlStateHighlighted];

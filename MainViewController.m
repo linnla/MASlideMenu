@@ -33,18 +33,21 @@
     NSString *identifier = @"";
     switch (indexPath.row) {
         case 0:
-            identifier = @"profile";
+            identifier = @"map";
             break;
         case 1:
-            identifier = @"settings";
+            identifier = @"profile";
             break;
         case 2:
-            identifier = @"education";
+            identifier = @"settings";
             break;
         case 3:
-            identifier = @"share";
+            identifier = @"education";
             break;
         case 4:
+            identifier = @"share";
+            break;
+        case 5:
             identifier = @"rateUs";
             break;
     }

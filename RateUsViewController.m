@@ -21,6 +21,9 @@
     [self disableSlidePanGestureForRightMenu];
     
     [self addLeftMenuButton];
+    
+    #define APP_URL_STRING  @"https://itunes.apple.com/us/app/calcfast/id876781417?mt=8"
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: APP_URL_STRING]];
 }
 
 @end
